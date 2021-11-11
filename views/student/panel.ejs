@@ -1,0 +1,16 @@
+<%- include("../layout/student/navbar") -%>
+
+    <div class="container">
+        <% post.forEach(data=> { %>
+            <div class="card mb-3">
+                <img class="card-img-top" src="/upload/images/<%= data.image%>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%= data.title%></h5>
+                  <p class="card-text"><%= data.des%></p>
+                  <p class="card-text"><small class="text-muted"><%= data.Date%></small></p>
+                </div>
+              </div>
+            <% }); %>
+    </div>
+
+    <%- include("../layout/student/footer") -%>

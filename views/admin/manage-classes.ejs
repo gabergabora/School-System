@@ -1,0 +1,45 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="manage-teacher">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">اسم الصف</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% _class.forEach(data=> { %>
+                        <tr>
+                            <td>
+                                <%= data.name%>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" onclick="window.location.href='/admin/manage-student/filter/<%= data.name%>'" role="button">الطلاب ضمن الصف</button>
+                            </td>
+
+                            <td>
+                                <button class="btn btn-dark" onclick="window.location.href='/admin/manage-table/<%= data.name%>'" role="button">الجدول اليومي</button>
+                            </td>
+
+                            <td>
+                                <button class="btn btn-success" onclick="window.location.href='/admin/manage-classes-edit/<%= data.id%>'">تعديل</button>
+                            </td>
+
+                            <td>
+                                <form action="/admin/manage-classes/delete/<%= data.id%>?_method=DELETE" method="post">
+                                    <button class="btn btn-danger">حذف</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include("../layout/admin/footer") -%>

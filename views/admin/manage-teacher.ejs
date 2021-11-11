@@ -1,0 +1,71 @@
+<%- include("../layout/admin/navbar") -%>
+
+<div class="manage-teacher">
+
+    <div class="filters">
+        <center>
+        <select onchange="if (this.value) window.location.href=this.value">
+            <option value="">تحديد التخصص</option>
+            <option value="/admin/manage-teacher/filter/all">جميع التخصصات</option>
+            <% teacherCate.forEach(data => { %>
+                <option value="/admin/manage-teacher/filter/<%= data.name%>"><%= data.name %> </option>
+           <% }); %>
+           <input type="text" id="search" placeholder="بحث عن اسم الطالب">
+                <button onclick="goSearch()">بحث</button>
+        </select>
+    </center>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">اسم الطالب</th>
+                <th scope="col">التخصص</th>
+                <th scope="col">رقم الهاتف</th>
+                <th scope="col">الكود</th>
+                <th scope="col">تاريخ الولادة</th>
+                <th scope="col">تعديل</th>
+                <th scope="col">حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% teachers.forEach(data=> { %>
+                <tr>
+                    <td>
+                        <%= data.name%>
+                    </td>
+                    <td>
+                        <%= data.cate%>
+                    </td>
+                    <td>
+                        <%= data.phone%>
+                    </td>
+                    <td>
+                        <%= data.code%>
+                    </td>
+                    <td>
+                        <%= data.born%>
+                    </td>
+
+                    <td>
+                        <button class="btn btn-success" onclick="window.location.href = '/admin/manage-teacher-edit/<%= data.code%>'">تعديل</button>
+                    </td>
+
+                    <td>
+                        <form action="/admin/manage-teacher/delete/<%= data.code%>?_method=DELETE" method="post">
+                            <button class="btn btn-danger">حذف</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function goSearch(){
+      var search = document.getElementById("search").value;
+      window.location.href = "/admin/manage-teacher/name/" + search
+    }
+  </script>
+
+<%- include("../layout/admin/footer") -%>

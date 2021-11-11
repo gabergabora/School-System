@@ -1,0 +1,40 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="manage-student-edit">
+        <div class="container">
+            <form action="/admin/manage-teacher-edit/<%= teacher.code%>?_method=PUT" method="post">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">اسم المدرس</th>
+                            <th scope="col">رقم الهاتف</th>
+                            <th scope="col">التخصص</th>
+                            <th scope="col">تاريخ الولادة</th>
+                            <th scope="col">الكود</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="name" value="<%= teacher.name%>"></td>
+                            <td><input type="text" name="phone" value="<%= teacher.phone%>"></td>
+                            <td><select name="cate" id="">
+                                    <option selected>
+                                        <%= teacher.cate%>
+                                    </option>
+                                    <% teacherCate.forEach(data=> { %>
+                                        <option>
+                                            <%= data.name%>
+                                        </option>
+                                        <% }); %>
+                                </select></td>
+                            <td><input type="date" name="born" value="<%= teacher.born%>"></td>
+                            <td><input type="text" value="<%= teacher.code%>" disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="submit" class="btn btn-success">تاكيد التعديل</button>
+            </form>
+        </div>
+    </div>
+    <%- include("../layout/admin/footer") -%>

@@ -1,0 +1,44 @@
+<%- include("../layout/admin/navbar") -%>
+
+
+  <div class="add-student">
+    <center>
+      <form action="/admin/add-student" method="POST">
+        <input type="text" name="name" placeholder="اسم الطالب">
+        <input type="date" name="born" placeholder="المواليد">
+        <input type="text" name="phone" placeholder="رقم الهاتف">
+        <select name="_class">
+          <option value="" selected>الصف</option>
+          <% classes.forEach(data=> { %>
+            <option>
+              <%= data.name%>
+            </option>
+            <% }) %>
+        </select>
+        <input type="text" id="code" name="code">
+        <button type="sibmit">ادخال المعلومات</button>
+      </form>
+    </center>
+  </div>
+
+  <script>
+    function makeid(length) {
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      var charactersLength = characters.length;
+      for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+          charactersLength));
+      }
+      return result;
+    }
+
+    window.onload = function () {
+      document.getElementById("code").value = makeid(8);
+    }
+
+    console.log(makeid(5));
+  </script>
+
+
+  <%- include("../layout/admin/footer") -%>

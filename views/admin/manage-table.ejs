@@ -1,0 +1,102 @@
+<%- include("../layout/admin/navbar") -%>
+
+<form action="/admin/manage-table/delete/<%= _class.name%>?_method=DELETE" method="post">
+    <center>
+        <br>
+        <button type="submit" class="btn btn-danger">حذف الجدول</button>
+    </center>
+</form>
+
+    <div class="manage-teacher">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">اليوم</th>
+                        <th scope="col">الدرس الاول</th>
+                        <th scope="col">الدرس الثاني</th>
+                        <th scope="col">الدرس الثالث</th>
+                        <th scope="col">الدرس الرابع</th>
+                        <th scope="col">الدرس الخامس</th>
+                        <th scope="col">الدرس السادس</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>
+                            السبت
+                        </td>
+                        <% sat.forEach(data=> { %>
+
+                            <td>
+                                <%= data.subject %> 
+                            </td>
+                            <% }); %>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            الاحد
+                        </td>
+                        <% sun.forEach(data=> { %>
+
+                            <td>
+                                <%= data.subject %> 
+                            </td>
+                            <% }); %>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            الاثنين
+                        </td>
+                        <% mon.forEach(data=> { %>
+
+                            <td>
+                                <%= data.subject %> 
+                            </td>
+                            <% }); %>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            الثلاثاء
+                        </td>
+                        <% tus.forEach(data=> { %>
+
+                            <td>
+                                <%= data.subject %> 
+                            </td>
+                            <% }); %>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            الاربعاء
+                        </td>
+                        <% wed.forEach(data=> { %>
+
+                            <td>
+                                <%= data.subject %> 
+                            </td>
+                            <% }); %>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            الخميس
+                        </td>
+                        <% thur.forEach(data=> { %>
+
+                            <td>
+                                <%= data.subject %> 
+                            </td>
+                            <% }); %>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include("../layout/admin/footer") -%>

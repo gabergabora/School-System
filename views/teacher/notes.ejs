@@ -1,0 +1,29 @@
+<%- include("../layout/teacher/navbar") -%>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">العنوان</th>
+            <th scope="col">عرض</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% note.forEach(data => { %>
+                
+                <tr>
+                    <td><%= data.title%></td>
+                <td><button onclick="window.location.href='/teacher/getnote/<%= data.id%>'" class="btn btn-primary">عرض</button></td>
+                <td>
+                  <form action="/teacher/getnote/delete/<%= data.id%>?_method=DELETE" method="post">
+                  <button type="submit" class="btn btn-danger">حذف</button>
+                  </form>
+                  
+                </td>
+              </tr>
+            <% }); %>
+        </tbody>
+      </table>
+</div>
+
+<%- include("../layout/teacher/footer") -%>

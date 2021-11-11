@@ -1,0 +1,73 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="add-marks-data">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">الاسم</th>
+                        <th scope="col">الصف</th>
+                        <th scope="col">الكود</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= user.name%>
+                        </td>
+                        <td>
+                            <%= user._class%>
+                        </td>
+                        <td>
+                            <%= user.username%>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <form action="/admin/add-marks-data/<%= user.username%>" method="post">
+            <center>
+                <select name="month">
+                    <option selected>الشهر</option>
+                    <option>كانون الثاني</option>
+                    <option>شباط</option>
+                    <option>اذار</option>
+                    <option>نيسان</option>
+                    <option>ايار</option>
+                    <option>حزيران</option>
+                    <option>تموز</option>
+                    <option>اب</option>
+                    <option>ايلول</option>
+                    <option>تشرين الاول</option>
+                    <option>تشرين الثاني</option>
+                    <option>كانون الاول</option>
+                </select>
+
+                <select name="subject">
+                    <option selected>المادة الدراسية</option>
+                    <% subject.forEach(data=> { %>
+                        <option>
+                            <%= data.name %>
+                        </option>
+                        <% }); %>
+                </select>
+
+                <select name="cat">
+                    <option selected>قسم الدرجات</option>
+                    <% marksCat.forEach(data=> { %>
+                        <option>
+                            <%= data.name %>
+                        </option>
+                        <% }); %>
+                </select>
+
+                <input type="number" name="mark" placeholder="درجة الطالب">
+                <input type="number" name="fullmark" placeholder="الدرجة الكاملة للامتحان">
+                <br>
+                <button type="submit">ادخال المعلومات</button>
+            </center>
+        </form>
+    </div>
+
+    <%- include("../layout/admin/footer") -%>

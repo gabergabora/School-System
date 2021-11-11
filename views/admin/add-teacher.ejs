@@ -1,0 +1,41 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="add-teacher">
+        <center>
+            <form action="/admin/add-teacher" method="POST">
+                <input type="text" name="name" placeholder="اسم المدرس">
+                <input type="date" name="born" placeholder="تاريخ الولادة">
+                <input type="number" name="phone" placeholder="رقم الهاتف">
+                <select name="cate">
+                    <option value="" selected>التخصص</option>
+                    <% cate.forEach(data=> { %>
+                        <option>
+                            <%= data.name %>
+                        </option>
+                        <% }) %>
+                </select>
+                <input type="text" name="code" id="code">
+                <button type="sibmit">ادخال المعلومات</button>
+            </form>
+        </center>
+    </div>
+
+    <script>
+        function makeid(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() *
+                    charactersLength));
+            }
+            return result;
+        }
+
+        window.onload = function () {
+            document.getElementById("code").value = makeid(8);
+        }
+
+        console.log(makeid(5));
+    </script>
+    <%- include("../layout/admin/footer") -%>

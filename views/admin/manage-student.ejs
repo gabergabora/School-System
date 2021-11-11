@@ -1,0 +1,72 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="manage-student">
+
+        <div class="filters">
+            <center>
+            <select onchange="if (this.value) window.location.href=this.value">
+                <option value="">تحديد الصف</option>
+                <option value="/admin/manage-student/filter/all">جميع الصفوف</option>
+                <% classes.forEach(data => { %>
+                    <option value="/admin/manage-student/filter/<%= data.name%>"><%= data.name %> </option>
+               <% }); %>
+               <input type="text" id="search" placeholder="بحث عن اسم الطالب">
+                    <button onclick="goSearch()">بحث</button>
+            </select>
+        </center>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">اسم الطالب</th>
+                    <th scope="col">الصف</th>
+                    <th scope="col">رقم الهاتف</th>
+                    <th scope="col">الكود</th>
+                    <th scope="col">تاريخ الولادة</th>
+                    <th scope="col">تعديل</th>
+                    <th scope="col">حذف</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% student.forEach(data=> { %>
+                    <tr>
+                        <td>
+                            <%= data.name%>
+                        </td>
+                        <td>
+                            <%= data._class%>
+                        </td>
+                        <td>
+                            <%= data.phone%>
+                        </td>
+                        <td>
+                            <%= data.username%>
+                        </td>
+                        <td>
+                            <%= data.born%>
+                        </td>
+
+                        <td>
+                            <button class="btn btn-success" onclick="window.location.href = '/admin/manage-student-edit/<%= data.username%>'">تعديل</button>
+                        </td>
+
+                        <td>
+                            <form action="/admin/manage-student/delete/<%= data.username%>?_method=DELETE" method="post">
+                                <button class="btn btn-danger">حذف</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function goSearch(){
+          var search = document.getElementById("search").value;
+          var fixer = search.replace(" ", "-")
+          window.location.href = "/admin/manage-student/name/" + fixer
+        }
+      </script>
+
+    <%- include("../layout/admin/footer") -%>

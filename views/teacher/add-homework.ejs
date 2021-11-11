@@ -1,0 +1,25 @@
+<%- include("../layout/teacher/navbar") -%>
+
+    <div class="add-homework">
+        <form action="/teacher/add-homework" method="post">
+            <center>
+                <input type="text" value="<%= teacher.name%>" disabled>
+                <input type="text" name="subject" value="<%= teacher.cate%>" disabled>
+                <select name="_class">
+                    <option value="" selected>الصف</option>
+                    <% classes.forEach(data=> { %>
+                        <option>
+                            <%= data.name%>
+                        </option>
+                        <% }) %>
+                </select>
+                <br>
+                <br>
+                <textarea type="text" name="homework" placeholder="الواجب المنزلي"></textarea>
+                <br>
+                <button type="submit">ارسال</button>
+            </center>
+        </form>
+    </div>
+
+    <%- include("../layout/teacher/footer") -%>

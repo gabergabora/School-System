@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
+*{
+	font-family: 'Amiri', serif;
+}
+
+nav{
+	background-color: #F50057;
+    direction: rtl;
+}
+
+nav a{
+    color: white;
+}
+
+nav .nav-link{
+    margin: 0px 10px 0px 10px;
+    transition: all 1000ms ease 0ms;
+    color: white;
+}
+
+nav .nav-link:hover{
+    color: white;
+    font-size: 20px;
+}
+
+table{
+    direction: rtl;
+    text-align: center;
+
+}
+
+.teacher-home{
+    margin-top: 50px;
+}
+
+.teacher-home .btns{
+    display: grid;
+    width: 300px;
+}
+
+.teacher-home .btns button{
+    margin-top: 30px;
+    background-color: #F50057;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    color: white;
+    transition: all 1000ms ease 0ms
+}
+
+.teacher-home .btns button:hover{
+    font-size: 20px;
+}
+
+.add-homework{
+    margin-top: 100px;
+    direction: rtl;
+}
+
+.add-homework textarea{
+    width: 400px;
+    height: 200px;
+}
+
+.add-homework button{
+    margin-top: 20px;
+    background-color: #F50057;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    transition: all 1000ms ease 0ms
+}
+
+.add-homework button:hover{
+    width: 220px;
+    font-size:18px
+}

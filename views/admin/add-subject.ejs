@@ -1,0 +1,38 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="add-subject">
+        <div class="container">
+            <center>
+                <button onclick="window.location.href='/admin/add-subject/add'">اضافة مواد دراسية</button>
+                <select onchange="if (this.value) window.location.href=this.value">
+                    <option value="">تحديد الصف</option>
+                    <option value="/admin/add-subject/filter/all">جميع الصفوف</option>
+                    <% _class.forEach(data => { %>
+                        <option value="/admin/add-subject/filter/<%= data.name%>"><%= data.name %> </option>
+                   <% }); %>
+                </select>
+            </center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">المادة الدراسية</th>
+                        <th scope="col">الصف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subject.forEach(data=> { %>
+                        <tr>
+                            <td>
+                                <%= data.name%>
+                            </td>
+                            <td>
+                                <%= data._class%>
+                            </td>
+                        </tr>
+                       <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include("../layout/admin/footer") -%>

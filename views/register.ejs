@@ -1,0 +1,13 @@
+<%- include("layout/navbar") -%>
+
+<div class="form-style-8">
+<h2>Registers</h2>
+<form action="/api/register" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <input type="email" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Create Account</button>
+</form>
+</div>
+
+<%- include("layout/footer") -%>

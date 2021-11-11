@@ -1,0 +1,50 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="add-marks">
+        <center>
+            <div class="filter">
+                <select onchange="if (this.value) window.location.href=this.value">
+                    <option value="">تحديد الصف</option>
+                    <option value="/admin/add-marks/class/all">جميع الصفوف</option>
+                    <% classes.forEach(data => { %>
+                        <option value="/admin/add-marks/class/<%= data.name%>"><%= data.name %> </option>
+                   <% }); %>
+                </select>
+                <input type="text" id="search" placeholder="بحث عن اسم الطالب">
+                <button onclick="goSearch()">بحث</button>
+            </div>
+        </center>
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">اسم الطالب</th>
+                    <th scope="col">الصف</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% user.forEach(data => { %>
+                    <tr>
+                        <td><%= data.name %></td>
+                        <td><%= data._class %></td>
+                        <td><button class="btn btn-success" onclick="window.location.href='/admin/add-marks-data/<%= data.username%>'">اضافة درجات</button></td>
+                        <td><button class="btn btn-primary">تعديل درجات</button></td>
+                      </tr>
+                 <% }); %> 
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <script>
+      function goSearch(){
+        var search = document.getElementById("search").value;
+        var fixer = search.replace(" ", "-")
+        window.location.href = "/admin/add-marks/class/all/name/" + fixer
+      }
+    </script>
+
+    <%- include("../layout/admin/footer") -%>

@@ -1,0 +1,22 @@
+<%- include("../layout/student/navbar") -%>
+
+<br>
+
+<center class="mystr">
+    <div class="comments">
+        
+    </div>
+    <input type="text"> <button class="btn btn-warning">ارسال</button>
+<video id="vid" autoplay></video>
+
+</center>
+<script>
+    navigator.mediaDevices.getUserMedia({
+        video: true
+    })
+    .then(stream => {
+        document.getElementById("vid").srcObject = stream;
+    })
+</script>
+
+<%- include("../layout/student/footer") -%>

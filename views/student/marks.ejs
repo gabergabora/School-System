@@ -1,0 +1,11 @@
+<%- include("../layout/student/navbar") -%>
+
+<div class="homework container">
+    <% marks.forEach(data => { %>
+        <div class="alert alert-warning" onclick="window.location.href='/student/marks/<%= data.name%>'" role="alert">
+            <%= data.name%>
+          </div>
+    <% }); %>
+</div>
+
+    <%- include("../layout/student/footer") -%>

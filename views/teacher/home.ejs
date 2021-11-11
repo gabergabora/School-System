@@ -1,0 +1,34 @@
+<%- include("../layout/teacher/navbar") -%>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">الاسم</th>
+            <th scope="col">الكود</th>
+            <th scope="col">التخصص</th>
+            <th scope="col">رقم الهاتف</th>
+          </tr>
+        </thead>
+        <tbody>
+            <td><%= data.name%></td>
+            <td><%= data.code%></td>
+            <td><%= data.cate%></td>
+            <td><%= data.phone%></td>
+        </tbody>
+      </table>
+
+      <div class="teacher-home">
+        <center>
+        <div class="btns">
+        <button onclick="window.location.href='/teacher/add-homework'">ارسال واجبات</button>
+        <button onclick="window.location.href='/teacher/homework-history/filter/all'">سجل واجبات (<%= data.cate %> )</button>
+        <button onclick="window.location.href='/teacher/note'">تدوين معلومات</button>
+        <button onclick="window.location.href='/teacher/getnote'">تدوين معلومات</button>
+        
+      </div>
+        </center>
+        </div>
+</div>
+
+<%- include("../layout/teacher/footer") -%>

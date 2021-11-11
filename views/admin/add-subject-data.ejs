@@ -1,0 +1,16 @@
+<%- include("../layout/admin/navbar") -%>
+
+<div class="add-subject-data">
+    <form action="/admin/add-subject/add" method="post">
+    <input type="text" name="name" placeholder="اسم المادة الدراسية">
+    <select name="_class">
+        <option selected>تحديد الصف</option>
+        <% _class.forEach(data => { %>
+            <option><%= data.name %></option>
+        <% }); %>
+    </select>
+    <button type="submit">اضافة المادة</button>
+    </form>
+</div>
+
+    <%- include("../layout/admin/footer") -%>

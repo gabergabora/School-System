@@ -1,0 +1,12 @@
+<%- include("../layout/student/navbar") -%>
+
+<div class="homework container">
+    <% homework.forEach(data => { %>
+      <div class="alert alert-secondary" onclick="window.location.href='/student/homework/<%= data.id%>'" role="alert">
+        <%= data.subject %>
+        <small><%= data.Date%></small>
+      </div>  
+    <% }); %>
+</div>
+
+    <%- include("../layout/student/footer") -%>

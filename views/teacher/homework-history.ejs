@@ -1,0 +1,39 @@
+<%- include("../layout/teacher/navbar") -%>
+
+    <div class="container">
+        <center>
+            <select onchange="if (this.value) window.location.href=this.value">
+                <option value="">تحديد الصف</option>
+                <option value="/teacher/homework-history/filter/all">جميع الصفوف</option>
+                <% classes.forEach(data => { %>
+                    <option value="/teacher/homework-history/filter/<%= data.name%>"><%= data.name %> </option>
+               <% }); %>
+            </select>
+        </center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">الصف</th>
+                    <th scope="col">المادة</th>
+                    <th scope="col">الواجب</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% hw.forEach(data => { %>
+                    <tr>
+                        <td>
+                            <%= data._class%>
+                        </td>
+                        <td>
+                            <%= data.subject%>
+                        </td>
+                        <td>
+                            <%= data.homework%>
+                        </td>
+                    </tr>
+                <%}) %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include("../layout/teacher/footer") -%>

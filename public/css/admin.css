@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
+*{
+	font-family: 'Amiri', serif;
+}
+
+/* Admin navbar */
+
+nav{
+	background-color: #00BFA6;
+    direction: rtl;
+}
+
+nav a{
+    color: white;
+}
+
+nav .nav-link{
+    margin: 0px 10px 0px 10px;
+    transition: all 1000ms ease 0ms;
+    color: white;
+}
+
+nav .nav-link:hover{
+    color: white;
+    font-size: 20px;
+}
+
+/* Panel */
+
+.panel .btns{
+    display: grid;
+    width: 500px;
+    margin-top: 100px;
+}
+
+.panel .btns button{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    font-size: 20px;
+    width: 400px;
+    border: none;
+    background-color: #00BFA6;
+    color: white;
+    border-radius: 10px;
+    transition: all 1000ms ease 0ms;
+}
+
+.panel .btns button:hover{
+    font-size: 25px;
+    width: 430px;
+}
+
+/* Add-data */
+
+.add-data .btns{
+    display: grid;
+    width: 500px;
+    margin-top: 10px;
+}
+
+.add-data .btns button{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    font-size: 20px;
+    width: 400px;
+    border: none;
+    background-color: #00BFA6;
+    color: white;
+    border-radius: 10px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-data .btns button:hover{
+    font-size: 25px;
+    width: 430px;
+}
+
+/* Add Class */
+
+.add-class form{
+    margin-top: 200px;
+    direction: rtl;
+    display: grid;
+}
+
+.add-class input {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    border-color: #00BFA6;
+    border-width: 2px;
+    outline: none;
+    border-style: solid;
+}
+
+.add-class button{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: none;
+    background-color: #00BFA6;
+    border-radius: 10px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-class button:hover{
+    font-size: 20px;
+    width: 230px;
+}
+
+/* Add Student */
+
+.add-student form{
+    display: grid;
+    width: 600px;
+    margin-top: 60px;
+    direction: rtl;
+}
+
+.add-student input{
+    border-color: #00BFA6;
+    border-style: solid;
+    border-radius: 7px;
+    margin-top: 30px;
+}
+
+.add-student select{
+    border-color: #00BFA6;
+    border-style: solid;
+    border-radius: 7px;
+    margin-top: 30px;
+    border-width: 2px;
+}
+
+.add-student button{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: none;
+    background-color: #00BFA6;
+    border-radius: 10px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-student button:hover{
+    font-size: 20px;
+    width: 230px;
+}
+
+/* Add Teacher */
+
+.add-teacher form{
+    display: grid;
+    width: 600px;
+    margin-top: 60px;
+    direction: rtl;
+}
+
+.add-teacher input{
+    border-color: #00BFA6;
+    border-style: solid;
+    border-radius: 7px;
+    margin-top: 30px;
+}
+
+.add-teacher select{
+    border-color: #00BFA6;
+    border-style: solid;
+    border-radius: 7px;
+    margin-top: 30px;
+    border-width: 2px;
+}
+
+.add-teacher button{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: none;
+    background-color: #00BFA6;
+    border-radius: 10px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-teacher button:hover{
+    font-size: 20px;
+    width: 230px;
+}
+
+/* Add Table */
+
+.add-table form{
+    margin-top: 150px;
+    direction: rtl;
+}
+
+.add-table form select{
+    margin-right: 10px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.add-table input{
+    margin-top: 40px;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.add-table button{
+    margin-top: 20px;
+    background-color: #00BFA6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-table button:hover{
+    width: 180px;
+    font-size: 18px;
+}
+
+/* Add Marks */
+
+.add-marks {
+    direction: rtl;
+}
+
+.add-marks .filter{
+    margin-top: 20px;
+}
+
+.add-marks .filter select{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 150px;
+    border-radius: 8px;
+}
+
+.add-marks .filter input{
+    margin-right: 10px;
+    width: 250px;
+    border-radius: 8px;
+}
+
+.add-marks .filter button{
+    width: 80px;
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.add-marks table{
+    margin-top: 30px;
+}
+
+.add-marks table button{
+    font-size: 13px;
+}
+
+.add-marks-data{
+    direction: rtl;
+}
+
+.add-marks-data table{
+    margin-top: 20px;
+}
+
+.add-marks-data form{
+    margin-top: 100px;
+}
+
+.add-marks-data form button{
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-marks-data form button:hover{
+    font-size: 20px;
+}
+
+.add-subject{
+    direction: rtl;
+}
+
+.add-subject button{
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 1000ms ease 0ms;
+}
+
+.add-subject button:hover{
+    font-size: 20px;
+}
+
+.add-subject-data{
+    direction: rtl;
+}
+
+.add-subject-data form{
+    display: grid;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+.add-subject-data input{
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+
+.add-subject-data button{
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 1000ms ease 0ms;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-subject-data button:hover{
+    font-size: 20px;
+}
+
+.information-management .btns{
+    display: grid;
+    margin-top: 20px;
+}
+
+.information-management .btns button{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 20px;
+    transition: all 1000ms ease 0ms;
+}
+
+.information-management .btns button:hover{
+    width: 430px;
+    font-size: 23px;
+}
+
+.manage-student{
+    direction: rtl;
+}
+
+.manage-student .filters {
+    margin-top: 20px;
+}
+
+.manage-student .filters select{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    border-bottom-style: solid;
+    border-width: 2px;
+    text-align: center;
+    width: 200px;
+    border-color: #00BFA6;
+}
+
+.manage-student .filters input{
+    border: none;
+    border-bottom-style: solid;
+    border-width: 2px;
+    width: 300px;
+    border-color: #00BFA6;
+}
+
+.manage-student .filters button{
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 1000ms ease 0ms;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.manage-student .filters button:hover{
+    font-size: 20px;
+    width: 80px;
+}
+
+
+
+.manage-student table{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.manage-student table button{
+    font-size:12px;
+}
+
+.manage-student-edit{
+    direction: rtl;
+    text-align: center;
+}
+
+.manage-student-edit table{
+    margin-top: 130px;
+}
+
+.manage-student-edit input {
+    border: none;
+    border-bottom-style: solid;
+    border-width: 1px;
+    text-align: center;
+}
+
+.manage-student-edit button{
+    margin-top: 20px;
+}
+
+.manage-teacher{
+    direction: rtl;
+}
+
+.manage-teacher .filters {
+    margin-top: 20px;
+}
+
+.manage-teacher .filters select{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    border-bottom-style: solid;
+    border-width: 2px;
+    text-align: center;
+    width: 200px;
+    border-color: #00BFA6;
+}
+
+.manage-teacher .filters input{
+    border: none;
+    border-bottom-style: solid;
+    border-width: 2px;
+    width: 300px;
+    border-color: #00BFA6;
+}
+
+.manage-teacher .filters button{
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 1000ms ease 0ms;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.manage-teacher .filters button:hover{
+    font-size: 20px;
+    width: 80px;
+}
+
+
+
+.manage-teacher table{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.manage-teacher table button{
+    font-size:12px;
+}
+
+.add-post form{
+    direction:rtl;
+    display: grid;
+    margin-top: 100px;
+    width: 400px;
+}
+
+.add-post input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.add-post textarea{
+    height: 200px
+}
+
+.add-post button{
+    background-color: #00BFA6;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 1000ms ease 0ms;
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-post button:hover{
+    font-size: 20px;
+    width: 180px;
+}

@@ -1,0 +1,20 @@
+<%- include("../layout/teacher/navbar") -%>
+
+    <div class="add-homework">
+        <form action="/teacher/note" method="post">
+            <center>
+                <input type="text" value="<%= teacher.name%>" disabled>
+                <input type="text" value="<%= teacher.cate%>" disabled>
+                <br>
+                <br>
+                <input type="text" name="title" placeholder="عنوان المذكرة">
+                <br>
+                <br>
+                <textarea type="text" name="note" placeholder="محتوى المذكرة"></textarea>
+                <br>
+                <button type="submit">ارسال</button>
+            </center>
+        </form>
+    </div>
+
+    <%- include("../layout/teacher/footer") -%>

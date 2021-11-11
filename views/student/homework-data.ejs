@@ -1,0 +1,15 @@
+<%- include("../layout/student/navbar") -%>
+
+<div class="homework-data container">
+    <div class="titles">
+        <p><%= homework.subject%></p>
+        <p><%= homework._class%></p>
+        <p>أ.<%= homework.name%></p>
+    </div>
+
+    <div class="get-homework">
+        <p><%= homework.homework%></p>
+    </div>
+</div>
+
+    <%- include("../layout/student/footer") -%>

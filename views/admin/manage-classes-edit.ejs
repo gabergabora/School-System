@@ -1,0 +1,23 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="manage-student-edit">
+        <div class="container">
+            <form action="/admin/manage-classes-edit/<%= _class.id%>?_method=PUT" method="post">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">اسم الصف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="name" value="<%= _class.name%>"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="submit" class="btn btn-success">تاكيد التعديل</button>
+            </form>
+        </div>
+    </div>
+    <%- include("../layout/admin/footer") -%>

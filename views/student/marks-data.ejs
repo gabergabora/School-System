@@ -1,0 +1,16 @@
+<%- include("../layout/student/navbar") -%>
+
+<div class="homework marks-data container">
+    <div class="card" style="width: 60%">
+        <div class="card-header">
+          درجات شهر <%= month%>
+        </div>
+        <ul class="list-group list-group-flush">
+          <% marks.forEach(data => { %>
+            <li class="list-group-item"><%= data.subject %> : <%=data.fullmark%>/<%=data.mark%></li>
+          <% }); %>
+        </ul>
+      </div>
+</div>
+
+<%- include("../layout/student/footer") -%>

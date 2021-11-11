@@ -1,0 +1,38 @@
+<%- include("../layout/admin/navbar") -%>
+
+<div class="manage-teacher">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">اسم التخصص</th>
+                <th scope="col">المدرسين ضمن التخصص</th>
+                <th scope="col">تعديل</th>
+                <th scope="col">حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cate.forEach(data=> { %>
+                <tr>
+                    <td>
+                        <%= data.name %> 
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" onclick="window.location.href='/admin/manage-teacher/filter/<%= data.name%>'">المدرسين ضمن التخصص</button>
+                    </td>
+
+                    <td>
+                        <button class="btn btn-success" onclick="window.location.href = '/admin/manage-teachercate-edit/<%= data.id%>'">تعديل</button>
+                    </td>
+
+                    <td>
+                        <form action="/admin/manage-teachercate/delete/<%= data.id%>?_method=DELETE" method="post">
+                            <button class="btn btn-danger">حذف</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../layout/admin/footer") -%>

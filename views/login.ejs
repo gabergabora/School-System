@@ -1,0 +1,12 @@
+<%- include("layout/navbar") -%>
+
+<div class="form-style-8">
+<h2>Login</h2>
+<form action="/api/login" method="POST">
+  <input type="email" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+</div>
+
+<%- include("layout/footer") -%>

@@ -1,0 +1,44 @@
+<%- include("../layout/admin/navbar") %> 
+
+<div class="add-table">
+    <center>
+    <form action="/admin/add-table" method="post">
+        <div class="select">
+            <select name="_class">
+                <option selected>الصف</option>
+                <% classes.forEach(data => { %>
+                    <option><%= data.name %> </option>
+                <% }) %> 
+            </select>
+    
+            <select name="day">
+                <option selected>اليوم</option>
+                <option>السبت</option>
+                <option>الاحد</option>
+                <option>الاثنين</option>
+                <option>الثلاثاء</option>
+                <option>الاربعاء</option>
+                <option>الخميس</option>
+            </select>
+
+            <select name="seq">
+                <option selected>الدرس</option>
+                <option>الاول</option>
+                <option>الثاني</option>
+                <option>الثالث</option>
+                <option>الرابع</option>
+                <option>الخامس</option>
+                <option>السادس</option>
+            </select>
+        </div>
+
+        <div class="input">
+            <input type="text" name="subject" placeholder="مادة الدرس">
+        </div>
+
+        <button type="submit">ادخل المعلومات</button>
+    </form>
+</center>
+</div>
+
+<%- include("../layout/admin/footer") %> 

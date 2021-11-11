@@ -1,0 +1,51 @@
+<%- include("../layout/admin/navbar") -%>
+
+    <div class="manage-teacher">
+        <div class="container">
+            <center>
+                <select style="margin-top: 10px" onchange="if (this.value) window.location.href=this.value">
+                    <option value="">تحديد الصف</option>
+                    <option value="/admin/manage-subject/filter/all">جميع الصفوف</option>
+                    <% _class.forEach(data=> { %>
+                        <option value="/admin/manage-subject/filter/<%= data.name%>">
+                            <%= data.name %>
+                        </option>
+                        <% }); %>
+                </select>
+            </center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">المادة الدراسية</th>
+                        <th scope="col">الصف</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subject.forEach(data=> { %>
+                        <tr>
+                            <td>
+                                <%= data.name%>
+                            </td>
+                            <td>
+                                <%= data._class%>
+                            </td>
+
+                            <td>
+                                <button class="btn btn-success" onclick="window.location.href='/admin/manage-subject-edit/<%= data.id%>'">تعديل</button>
+                            </td>
+
+                            <td>
+                                <form action="/admin/manage-subject/delete/<%= data.id%>?_method=DELETE" method="post">
+                                    <button class="btn btn-danger">حذف</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include("../layout/admin/footer") -%>
